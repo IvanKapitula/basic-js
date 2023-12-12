@@ -1,9 +1,9 @@
-const { NotImplementedError } = require('../extensions/index.js');
+const { NotImplementedError } = require("../extensions/index.js");
 
 /**
  * Given matrix where you have to find cats by ears "^^"
  *
- * @param {Array<Array>} matrix 
+ * @param {Array<Array>} matrix
  * @return {Number} count of cats found
  *
  * @example
@@ -14,11 +14,21 @@ const { NotImplementedError } = require('../extensions/index.js');
  * ]) => 3`
  *
  */
-function countCats(/* matrix */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+function countCats(matrix) {
+  let matrixNew = [];
+  for (let i = 0; i < matrix.length; i++) {
+    matrixNew = matrixNew.concat(matrix[i]);
+  }
+  console.log(matrixNew);
+  let Number = 0;
+  while (matrixNew.indexOf("^^") !== -1) {
+    matrixNew.splice(matrixNew.indexOf("^^"), 1);
+    Number = Number + 1;
+    console.log(Number);
+  }
+  return Number;
 }
 
 module.exports = {
-  countCats
+  countCats,
 };
